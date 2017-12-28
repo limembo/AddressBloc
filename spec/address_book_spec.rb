@@ -109,6 +109,17 @@ RSpec.describe AddressBook do
     end
 end
 
+describe "#detonate" do
+  it "should delete all entries" do
+    book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+    book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+    book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+
+    book.detonate
+    expect(book.entries.size).to eq 0
+  end
+end
+
 # Test the binary_search method
    describe "#binary_search" do
      it "searches AddressBook for a non-existent entry" do

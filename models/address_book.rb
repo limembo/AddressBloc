@@ -46,6 +46,10 @@ class AddressBook
       end
     end
 
+    def detonate
+      @entries = []
+    end
+
     def binary_search(name)
       lower = 0
      upper = entries.length - 1
